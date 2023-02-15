@@ -2,18 +2,24 @@ import {StatusBar} from 'expo-status-bar';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {COLORS, FONTS} from "../Theme";
 import TxtInput_Instance from "../Components/TxtInput_Instance";
+import Drop from "../assets/images/drop.svg";
+
 
 export default function AppointmentScreen() {
     return (
         <View style={styles.container}>
 
             <View style={styles.LocationDiv}>
+
+                    <Drop width={300} height={300} style={styles.LocationDiv__img}/>
+
                 <Text style={styles.Location__subTXT}>
                     Blood Center
                 </Text>
                 <Text style={styles.Location__MainTXT}>
                     Welimada
                 </Text>
+
             </View>
 
             <View style={styles.FormCard}>
@@ -42,10 +48,16 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: COLORS.CandyRed,
 
+
     },
     LocationDiv: {
-        marginTop: 100,
-        marginLeft: 50
+        marginTop: 125,
+        marginLeft: 50,
+    },
+    LocationDiv__img:{
+        position:"absolute",
+        top:-15,
+        right:-15
     },
 
     Location__MainTXT: {
@@ -61,7 +73,7 @@ const styles = StyleSheet.create({
     },
 
     FormCard: {
-        marginTop: 50,
+        marginTop: 75,
         backgroundColor: COLORS.LavenderBlush,
         borderTopStartRadius: 30,
         borderTopEndRadius: 30,
