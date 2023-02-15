@@ -20,24 +20,24 @@ export default function LocationScreen() {
         {key: 'CMB', value: 'Colombo'}
     ]
 
-    const bloodCenterData = {
-        'BDL': [
-            {key: '1', value: 'Badulla'},
-            {key: '2', value: 'Welimada'},
-            {key: '3', value: 'Diyathalama'},
-        ],
-
-        'KND':[
-            {key: '4', value: 'Kandy'},
-            {key: '5', value: 'Peradeniya'},
-            {key: '6', value: 'Gampola'},
-
-        ],
-
-        'CMB':[
-            {key: '7', value: 'Homagama'},
-        ]
-    }
+    // const bloodCenterData = {
+    //     'BDL': [
+    //         {key: '1', value: 'Badulla'},
+    //         {key: '2', value: 'Welimada'},
+    //         {key: '3', value: 'Diyathalama'},
+    //     ],
+    //
+    //     'KND':[
+    //         {key: '4', value: 'Kandy'},
+    //         {key: '5', value: 'Peradeniya'},
+    //         {key: '6', value: 'Gampola'},
+    //
+    //     ],
+    //
+    //     'CMB':[
+    //         {key: '7', value: 'Homagama'},
+    //     ]
+    // }
 
 
     return (
@@ -59,18 +59,18 @@ export default function LocationScreen() {
             >
             </SelectList>
 
-            <SelectList
-                data={bloodCenterData}
-                setSelected={setBloodCenter}
-                boxStyles={
-                    {
-                        backgroundColor: COLORS.CrepePink,
+            {/*<SelectList*/}
+            {/*    data={bloodCenterData}*/}
+            {/*    setSelected={setBloodCenter}*/}
+            {/*    boxStyles={*/}
+            {/*        {*/}
+            {/*            backgroundColor: COLORS.CrepePink,*/}
 
-                    }
-                }>
-                {/*defaultOption={bloodCenterData[districtData][0]}*/}
+            {/*        }*/}
+            {/*    }>*/}
+            {/*    /!*defaultOption={bloodCenterData[districtData][0]}*!/*/}
 
-            </SelectList>
+            {/*</SelectList>*/}
 
 
             <TxtInput_Instance label='District'/>

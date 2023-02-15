@@ -18,6 +18,7 @@ export default function AlertScreen() {
 
             <View style={styles.alertDiv}>
                 <AlertNotification/>
+                <AlertNotification/>
             </View>
 
 
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
     },
 
     headingDiv:{
-        paddingTop:70,
+        paddingTop:100,
         paddingLeft:30,
         alignSelf:"flex-start"
 

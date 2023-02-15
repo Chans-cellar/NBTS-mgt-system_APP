@@ -66,7 +66,17 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         maxHeight: 160,
         flexDirection: "column",
-        justifyContent:"space-evenly"
+        justifyContent:"space-evenly",
+        // shadow settings
+        shadowColor: "#000000",
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity:  0.19,
+        shadowRadius: 5.62,
+        elevation: 6,
+        marginVertical:5
 
     },
 

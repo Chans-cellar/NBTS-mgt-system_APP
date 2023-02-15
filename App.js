@@ -12,6 +12,7 @@ import {
 } from '@expo-google-fonts/lato';
 import FirstScreen from "./screens/LoginScreen/FirstScreen";
 import LocationScreen from "./screens/LoginScreen/LocationScreen";
+import AlertScreen from "./screens/AlertScreen";
 
 export default function App() {
 
@@ -31,7 +32,7 @@ export default function App() {
     //return statement
     return (
         <View style={styles.container}>
-            <LocationScreen/>
+            <AlertScreen/>
         </View>
     );
 }

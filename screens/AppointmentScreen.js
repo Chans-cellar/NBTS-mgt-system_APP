@@ -7,6 +7,8 @@ export default function AppointmentScreen() {
         <View style={styles.container}>
 
 
+
+
         </View>
     );
 }
