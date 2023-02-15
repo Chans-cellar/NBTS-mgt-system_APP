@@ -13,6 +13,7 @@ import {
 import FirstScreen from "./screens/LoginScreen/FirstScreen";
 import LocationScreen from "./screens/LoginScreen/LocationScreen";
 import AlertScreen from "./screens/AlertScreen";
+import AppointmentScreen from "./screens/AppointmentScreen";
 
 export default function App() {
 
@@ -32,7 +33,7 @@ export default function App() {
     //return statement
     return (
         <View style={styles.container}>
-            <AlertScreen/>
+            <AppointmentScreen/>
         </View>
     );
 }

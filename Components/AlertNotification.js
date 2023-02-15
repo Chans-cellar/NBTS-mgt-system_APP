@@ -22,7 +22,6 @@ export default function AlertNotification() {
                         {fontFamily: FONTS.Bold, color:COLORS.CandyRed}
 
                     ]}>
-
                         07/02/2023
                     </Text>
                 </View>
@@ -51,10 +50,7 @@ export default function AlertNotification() {
                         Narahenpita Blood Bank
                     </Text>
                 </View>
-
             </View>
-
-
         </View>
     );
 }
