@@ -14,6 +14,14 @@ import FirstScreen from "./screens/LoginScreen/FirstScreen";
 import LocationScreen from "./screens/LoginScreen/LocationScreen";
 import AlertScreen from "./screens/AlertScreen";
 import AppointmentScreen from "./screens/AppointmentScreen";
+import HealthScreen from "./screens/LoginScreen/HealthScreen";
+import PasswordScreen from "./screens/LoginScreen/PasswordScreen";
+import TabNavigationScreen from "./screens/TabNavigationScreen";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import EventScreen from "./screens/EventScreen";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
 
@@ -33,7 +41,18 @@ export default function App() {
     //return statement
     return (
         <View style={styles.container}>
-            <AppointmentScreen/>
+            <NavigationContainer>
+                <Stack.Navigator initialRouteName={'PersonalLog'}>
+                    <Stack.Screen options={{headerShown:false}} name="Home" component={Home} />
+                    <Stack.Screen options={{headerShown:false}} name="Event" component={EventScreen} />
+                    <Stack.Screen options={{headerShown:false}} name="Alert" component={AlertScreen} />
+                    <Stack.Screen options={{headerShown:false}} name="Appointment" component={AppointmentScreen} />
+                    <Stack.Screen options={{headerShown:false}} name="PersonalLog" component={FirstScreen} />
+                    <Stack.Screen options={{headerShown:false}} name="LocationLog" component={LocationScreen} />
+                    <Stack.Screen options={{headerShown:false}} name="HealthLog" component={HealthScreen} />
+                    <Stack.Screen options={{headerShown:false}} name="PasswordLog" component={PasswordScreen} />
+                </Stack.Navigator>
+            </NavigationContainer>
         </View>
     );
 }

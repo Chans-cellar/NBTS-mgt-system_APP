@@ -1,13 +1,15 @@
 import {StatusBar} from 'expo-status-bar';
-import {Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Button, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {COLORS, FONTS} from "../../Theme";
 import TxtInput_Instance from "../../Components/TxtInput_Instance";
 import {RadioButton} from 'react-native-paper';
 import {useState} from "react";
 import {SelectList} from "react-native-dropdown-select-list";
+import {useNavigation} from "@react-navigation/native";
 
 
 export default function LocationScreen() {
+    const navigation = useNavigation();
     const [value, setValue] = useState('first');
 
     // drop down select state
@@ -42,70 +44,98 @@ export default function LocationScreen() {
 
     return (
         <View style={styles.container}>
-            <TxtInput_Instance label='Address'/>
+
+            <View style={styles.headingForm_collect}>
+
+                <View style={styles.HeadingDiv}>
+                    <Text style={styles.HeadingDiv__MainTXT}> Register </Text>
+                    <Text style={styles.HeadingDiv__SubTXT}> Location Information </Text>
+                </View>
 
 
-            {/*dropdown list*/}
-            <SelectList
-                data={districtData}
-                setSelected={setDistrict}
-                boxStyles={
-                    {
-                        backgroundColor: COLORS.CrepePink,
+                <View style={styles.formDiv}>
 
-                    }
-                }
-                defaultOption={{key: 'BDL', value: 'Badulla'}}
-            >
-            </SelectList>
-
-            {/*<SelectList*/}
-            {/*    data={bloodCenterData}*/}
-            {/*    setSelected={setBloodCenter}*/}
-            {/*    boxStyles={*/}
-            {/*        {*/}
-            {/*            backgroundColor: COLORS.CrepePink,*/}
-
-            {/*        }*/}
-            {/*    }>*/}
-            {/*    /!*defaultOption={bloodCenterData[districtData][0]}*!/*/}
-
-            {/*</SelectList>*/}
+                    <View>
+                        {/*label*/}
+                        <Text style={styles.textInput__labelTXT}> Address </Text>
+                        {/*textbox*/}
+                        <TextInput
+                            editable
+                            multiline
+                            numberOfLines={4}
+                            maxLength={100}
+                            style={styles.multiTextInput__dataHolder}/>
+                    </View>
 
 
-            <TxtInput_Instance label='District'/>
-            <TxtInput_Instance label='Nearest Blood Bank'/>
+                    <View>
+                        {/*label*/}
+                        <Text style={styles.textInput__labelTXT}> District </Text>
+                        {/*dropdown list*/}
+                        <SelectList
+                            data={districtData}
+                            setSelected={setDistrict}
+                            boxStyles={styles.textInput__dataHolder
+                            }
+                            defaultOption={{key: 'BDL', value: 'Badulla'}}
+                        >
+                        </SelectList>
+                    </View>
 
 
-            <View style={
-                {
-                    alignItems: undefined,
-                    all: 'reset',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignContent: 'space-between'
+                    <View>
+                        {/*label*/}
+                        <Text style={styles.textInput__labelTXT}> Nearest Blood Bank </Text>
+                        {/*dropdown list*/}
+                        <SelectList
+                            data={districtData}
+                            setSelected={setDistrict}
+                            boxStyles={styles.textInput__dataHolder
+                            }
+                            defaultOption={{key: 'BDL', value: 'Badulla'}}
+                        >
+                        </SelectList>
+                    </View>
 
-                }
-            }>
+
+                    {/*<SelectList*/}
+                    {/*    data={bloodCenterData}*/}
+                    {/*    setSelected={setBloodCenter}*/}
+                    {/*    boxStyles={*/}
+                    {/*        {*/}
+                    {/*            backgroundColor: COLORS.CrepePink,*/}
+
+                    {/*        }*/}
+                    {/*    }>*/}
+                    {/*    /!*defaultOption={bloodCenterData[districtData][0]}*!/*/}
+
+                    {/*</SelectList>*/}
+
+                </View>
+
+            </View>
+
+
+            <View style={styles.btnDiv}>
+
                 {/*Back Button*/}
                 <TouchableOpacity
-                    style={styles.Home__AppointBtn}
+                    style={styles.btn}
+                    onPress={() => navigation.goBack()}
+
                 >
-                    <Text
-                        style={styles.Home__AppointBtn__text}
-                    >
+
+                    <Text style={styles.btn__text}>
                         Back
                     </Text>
-
                 </TouchableOpacity>
 
                 {/*Next Button*/}
                 <TouchableOpacity
-                    style={styles.Home__AppointBtn}
+                    style={styles.btn}
+                    onPress={() => navigation.navigate("HealthLog")}
                 >
-                    <Text
-                        style={styles.Home__AppointBtn__text}
-                    >
+                    <Text style={styles.btn__text}>
                         Next
                     </Text>
 
@@ -123,19 +153,77 @@ const styles = StyleSheet.create({
         display: "flex",
         flex: 1,
         backgroundColor: COLORS.LavenderBlush,
+        justifyContent: "space-between"
+    },
+    headingForm_collect: {},
+    HeadingDiv: {
+        marginTop: 100,
+        marginBottom: 30,
+        marginLeft: 30
+    },
+
+    HeadingDiv__MainTXT: {
+        color: COLORS.WineRed,
+        fontFamily: FONTS.Bold,
+        fontSize: 30,
+        alignSelf: 'flex-start',
+
+    },
+
+    HeadingDiv__SubTXT: {
+        color: COLORS.AshPink,
+        fontFamily: FONTS.Regular,
+        fontSize: 16,
+
+    },
+
+    formDiv: {
         alignItems: "center",
         justifyContent: "center"
+
     },
-    Home__AppointBtn: {
+
+    textInput__labelTXT: {
+        color: COLORS.WineRed,
+        fontFamily: FONTS.Bold,
+        fontSize: 16,
+        alignSelf: 'flex-start',
+        paddingLeft: 10
+    },
+
+    textInput__dataHolder: {
+        backgroundColor: COLORS.CrepePink,
+        width: 320,
+        height: 50,
+        borderRadius: 10,
+        margin: 10
+    },
+    multiTextInput__dataHolder: {
+        backgroundColor: COLORS.CrepePink,
+        width: 320,
+        height: 100,
+        borderRadius: 10,
+        margin: 10
+    },
+    btnDiv: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        marginBottom: 30
+
+    },
+    btn: {
         backgroundColor: COLORS.CandyRed,
         borderRadius: 20,
         width: 140,
         height: 46,
         alignItems: "center",
         justifyContent: "center",
+        margin: 20
     },
 
-    Home__AppointBtn__text: {
+
+    btn__text: {
         color: '#fff',
         fontFamily: FONTS.Bold,
         fontSize: 18

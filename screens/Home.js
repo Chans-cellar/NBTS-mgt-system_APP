@@ -15,6 +15,7 @@ export default function Home() {
                 <Text style={{fontFamily: FONTS.Black, color: COLORS.WineRed, fontSize: 24}}> Chandika </Text>
             </View>
 
+
             {/*Main Widget*/}
             <View style={
                 {
@@ -23,6 +24,7 @@ export default function Home() {
             }>
                 <MainWidget/>
             </View>
+
 
             {/*Statistic  Widget Heading*/}
             <View style={styles.Home__statHead__cont}>
@@ -43,6 +45,7 @@ export default function Home() {
                     }
                 }>To National Blood transfusion Service</Text>
             </View>
+
 
             {/*Statistic Widget*/}
             <View style={styles.Home__StatWidgetDiv}>
