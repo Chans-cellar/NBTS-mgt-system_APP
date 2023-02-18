@@ -20,10 +20,20 @@ import TabNavigationScreen from "./screens/TabNavigationScreen";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import EventScreen from "./screens/EventScreen";
+import { useState } from 'react';
+import { NICContext } from './screens/helper/Context';
+
+
+
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+
+
+    //declare usestate for NIC
+    const[NIC,setNIC] = useState("");
+
 
     let [fontsLoaded] = useFonts({
         Lato_100Thin,
@@ -40,20 +50,22 @@ export default function App() {
 
     //return statement
     return (
-        <View style={styles.container}>
-            <NavigationContainer>
-                <Stack.Navigator initialRouteName={'PersonalLog'}>
-                    <Stack.Screen options={{headerShown:false}} name="Home" component={Home} />
-                    <Stack.Screen options={{headerShown:false}} name="Event" component={EventScreen} />
-                    <Stack.Screen options={{headerShown:false}} name="Alert" component={AlertScreen} />
-                    <Stack.Screen options={{headerShown:false}} name="Appointment" component={AppointmentScreen} />
-                    <Stack.Screen options={{headerShown:false}} name="PersonalLog" component={FirstScreen} />
-                    <Stack.Screen options={{headerShown:false}} name="LocationLog" component={LocationScreen} />
-                    <Stack.Screen options={{headerShown:false}} name="HealthLog" component={HealthScreen} />
-                    <Stack.Screen options={{headerShown:false}} name="PasswordLog" component={PasswordScreen} />
-                </Stack.Navigator>
-            </NavigationContainer>
-        </View>
+        <NICContext.Provider value={{NIC, setNIC}}>
+            <View style={styles.container}>
+                <NavigationContainer>
+                    <Stack.Navigator initialRouteName={'PersonalLog'}>
+                        <Stack.Screen options={{headerShown:false}} name="Home" component={Home} />
+                        <Stack.Screen options={{headerShown:false}} name="Event" component={EventScreen} />
+                        <Stack.Screen options={{headerShown:false}} name="Alert" component={AlertScreen} />
+                        <Stack.Screen options={{headerShown:false}} name="Appointment" component={AppointmentScreen} />
+                        <Stack.Screen options={{headerShown:false}} name="PersonalLog" component={FirstScreen} />
+                        <Stack.Screen options={{headerShown:false}} name="LocationLog" component={LocationScreen} />
+                        <Stack.Screen options={{headerShown:false}} name="HealthLog" component={HealthScreen} />
+                        <Stack.Screen options={{headerShown:false}} name="PasswordLog" component={PasswordScreen} />
+                    </Stack.Navigator>
+                </NavigationContainer>
+            </View>
+        </NICContext.Provider>
     );
 }
 

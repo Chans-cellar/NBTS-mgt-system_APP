@@ -2,25 +2,40 @@ import {StatusBar} from 'expo-status-bar';
 import {StyleSheet, Text, View} from 'react-native';
 import {COLORS, FONTS} from "../Theme";
 
+import { GiHeartDrop } from "react-icons/gi";
+import { GiWaterDrop } from "react-icons/gi";
+
+
+
 export default function StatWidget() {
     return (
         <View style={styles.container}>
 
-            {/*title*/}
-            <Text style={styles.title}>
-                avg volume
-            </Text>
+            <View style={styles.Topflex}>
+                {/*title*/}
+                <Text style={styles.title}>
+                    avg{'\n'}volume
+                </Text>
 
-            {/*Numeric Value*/}
-            <Text style={styles.NumValue}>
-                04
-            </Text>
+                {/*<View style={styles.Topflex__icon}>*/}
+                {/*    <GiHeartDrop/>*/}
+                {/*</View>*/}
 
-            {/*Units*/}
-            <Text style={styles.units}>
-                PINES/YEAR
-            </Text>
+            </View>
 
+            <View style={styles.Bottomflex}>
+
+                {/*Numeric Value*/}
+                <Text style={styles.NumValue}>
+                    04
+                </Text>
+
+                {/*Units*/}
+                <Text style={styles.units}>
+                    PINES/YEAR
+                </Text>
+
+            </View>
 
         </View>
     );
@@ -41,6 +56,24 @@ const styles = StyleSheet.create({
         shadowRadius: 9.51,
 
         elevation: 15,
+        flexDirection: "column",
+        justifyContent: "space-around"
+
+
+    },
+    Topflex: {
+        marginLeft: 20,
+        marginTop:10
+    },
+
+    Topflex__icon:{
+
+
+
+    },
+
+    Bottomflex: {
+        marginLeft: 20
 
 
     },

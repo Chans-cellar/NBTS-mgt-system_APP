@@ -4,13 +4,52 @@ import {COLORS, FONTS} from "../../Theme";
 import TxtInput_Instance from "../../Components/TxtInput_Instance";
 import ReactSimpleButton from "../../Components/ReactSimpleButton";
 import {RadioButton} from 'react-native-paper';
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {useNavigation} from "@react-navigation/native";
 
+
+//this firestore conneting librarries
+import { db } from '../../Components/config';
+// import { StatusBar } from 'expo-status-bar';
+// import { StyleSheet, Text, View } from 'react-native';
+// import { TextInput } from 'react-native-web';
+// import { useState } from 'react/cjs/react.development';
+import { collection, doc, setDoc, addDoc, updateDoc, deleteDoc, getDoc, getDocs, where, query } from "firebase/firestore";
+import { NICContext } from '../helper/Context';
 
 export default function FirstScreen() {
     const navigation = useNavigation();
     const [value, setValue] = useState('first');
+
+    //test
+     const {NIC,setNIC} = useContext(NICContext);
+
+
+    const [firstName, setfirstName] = useState('');
+    const [userName, setuserName] = useState('');
+    const [Age, setAge] = useState('');
+    const [mobileNo, setmobileNo] = useState('');
+     
+    
+    
+
+    //test
+    function create2(){
+        setDoc(doc(db, "Donor", (NIC)),{
+      
+            NIC: NIC,
+            firstName: firstName,
+            userName: userName,
+            Age: Age,
+            mobileNo: mobileNo,
+            
+          }).then(() => {
+            console.log('data submitted');
+            
+          }).catch((error) => {
+            console.log('something error');
+          });
+    }; 
 
     return (
         <View style={styles.container}>
@@ -26,14 +65,15 @@ export default function FirstScreen() {
                     {/*label*/}
                     <Text style={styles.textInput__labelTXT}> NIC Number </Text>
                     {/*textbox*/}
-                    <TextInput style={styles.textInput__dataHolder}/>
+
+                    <TextInput style={styles.textInput__dataHolder} value={NIC} onChangeText={(NIC) => {setNIC(NIC)}} placeholder= "NIC"/>
                 </View>
 
                 <View>
                     {/*label*/}
-                    <Text style={styles.textInput__labelTXT}> Full Name </Text>
+                    <Text style={styles.textInput__labelTXT} > Full Name </Text>
                     {/*textbox*/}
-                    <TextInput style={styles.textInput__dataHolder}/>
+                    <TextInput style={styles.textInput__dataHolder} value={firstName} onChangeText={(firstName) => {setfirstName(firstName)}} placeholder= "firstName" />
                 </View>
 
 
@@ -41,16 +81,16 @@ export default function FirstScreen() {
                     {/*label*/}
                     <Text style={styles.textInput__labelTXT}> User Name </Text>
                     {/*textbox*/}
-                    <TextInput style={styles.textInput__dataHolder}/>
+                    <TextInput style={styles.textInput__dataHolder} value={userName} onChangeText={(userName) => {setuserName(userName)}} placeholder= "userName"/>
 
                 </View>
 
 
                 <View>
                     {/*label*/}
-                    <Text style={styles.textInput__labelTXT}> Date of Birth </Text>
+                    <Text style={styles.textInput__labelTXT}> Age </Text>
                     {/*textbox*/}
-                    <TextInput style={styles.textInput__dataHolder}/>
+                    <TextInput style={styles.textInput__dataHolder} value={Age} onChangeText={(Age) => {setAge(Age)}} placeholder= "Age"/>
 
                 </View>
 
@@ -59,7 +99,7 @@ export default function FirstScreen() {
                     {/*label*/}
                     <Text style={styles.textInput__labelTXT}> Mobile Number </Text>
                     {/*textbox*/}
-                    <TextInput style={styles.textInput__dataHolder}/>
+                    <TextInput style={styles.textInput__dataHolder} value={mobileNo} onChangeText={(mobileNo) => {setmobileNo(mobileNo)}} placeholder= "mobileNo"/>
                 </View>
 
 
@@ -89,7 +129,13 @@ export default function FirstScreen() {
                 {/*Button*/}
                 <TouchableOpacity
                     style={styles.btn}
-                    onPress={() => navigation.navigate("LocationLog")}
+                    onPress={() => {
+                        navigation.navigate("LocationLog")
+                        create2()
+                    }
+
+                }
+
                 >
                     <Text
                         style={styles.btn__text}
@@ -177,5 +223,8 @@ const styles = StyleSheet.create({
         fontSize: 18
     }
 
+    
+
 
 });
+

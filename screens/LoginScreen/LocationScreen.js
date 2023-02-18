@@ -3,24 +3,52 @@ import {Button, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react
 import {COLORS, FONTS} from "../../Theme";
 import TxtInput_Instance from "../../Components/TxtInput_Instance";
 import {RadioButton} from 'react-native-paper';
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {SelectList} from "react-native-dropdown-select-list";
 import {useNavigation} from "@react-navigation/native";
+
+import { db } from '../../Components/config';
+import { collection, doc, setDoc, addDoc, updateDoc, deleteDoc, getDoc, getDocs, where, query } from "firebase/firestore";
+import { NICContext } from '../helper/Context';
+
+
+
+
 
 
 export default function LocationScreen() {
     const navigation = useNavigation();
+
     const [value, setValue] = useState('first');
 
     // drop down select state
     const [district, setDistrict] = useState("")
     const [bloodCenter, setBloodCenter] = useState("")
+    
 
     const districtData = [
         {key: 'BDL', value: 'Badulla'},
         {key: 'KND', value: 'Kandy'},
         {key: 'CMB', value: 'Colombo'}
     ]
+
+   //import context
+    const {NIC} = useContext(NICContext);
+    const [address, setaddress] = useState('');
+
+    function create3(){
+        setDoc(doc(db, "Donor", (NIC)),{
+      
+            address: address,
+            
+          }, { merge: true }).then(() => {
+            console.log('data submitted');
+            
+          }).catch((error) => {
+            console.log('something error');
+          });
+    }; 
+    
 
     // const bloodCenterData = {
     //     'BDL': [
@@ -57,14 +85,15 @@ export default function LocationScreen() {
 
                     <View>
                         {/*label*/}
-                        <Text style={styles.textInput__labelTXT}> Address </Text>
+                        <Text style={styles.textInput__labelTXT}> Address  </Text>
                         {/*textbox*/}
                         <TextInput
                             editable
                             multiline
                             numberOfLines={4}
                             maxLength={100}
-                            style={styles.multiTextInput__dataHolder}/>
+                            style={styles.multiTextInput__dataHolder}
+                            value={address} onChangeText={(address) => {setaddress(address)}} placeholder = "address"/>
                     </View>
 
 
@@ -124,7 +153,6 @@ export default function LocationScreen() {
                     onPress={() => navigation.goBack()}
 
                 >
-
                     <Text style={styles.btn__text}>
                         Back
                     </Text>
@@ -133,7 +161,12 @@ export default function LocationScreen() {
                 {/*Next Button*/}
                 <TouchableOpacity
                     style={styles.btn}
-                    onPress={() => navigation.navigate("HealthLog")}
+                    onPress={() => {
+                        navigation.navigate("HealthLog")
+                        create3()
+                        
+                }
+            }
                 >
                     <Text style={styles.btn__text}>
                         Next

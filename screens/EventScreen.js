@@ -8,27 +8,28 @@ export default function EventScreen() {
         <View style={styles.container}>
 
 
-            {/*title div*/}
+            {/*title division*/}
             <View style={styles.Events__topicDiv}>
 
                 {/*title - main part*/}
                 <Text style={
                     {
                         fontFamily: FONTS.Black,
-                        fontSize: 20,
-                        color:COLORS.WineRed
+                        fontSize: 30,
+                        color:COLORS.WineRed,
+                        margin:1
                     }
                 }>
                     Upcoming Campaigns
                 </Text>
 
                 {/*title - sub part*/}
-
                 <Text style={
                     {
                         fontFamily: FONTS.Bold,
-                        fontSize: 12,
-                        color:COLORS.AshPink
+                        fontSize: 18,
+                        color:COLORS.AshPink,
+                        margin:1
                     }
                 }>
                     Homagama
@@ -37,12 +38,11 @@ export default function EventScreen() {
 
             {/*Notifications div*/}
             <View style={styles.Events__notifyDiv}>
-
                 {/*Notification component*/}
+                <Notification/>
                 <Notification/>
 
             </View>
-
 
         </View>
     );
@@ -55,13 +55,14 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.LavenderBlush,
 
     },
-    Events__topicDiv: {
-        top:125,
-        left: 30
-    },
-    Events__notifyDiv:{
-        paddingTop:140,
-        width: 310
 
+    Events__topicDiv: {
+        marginTop:100,
+        marginLeft: 30
+    },
+
+    Events__notifyDiv:{
+        paddingTop:30,
+        alignItems: "center",
     }
 });

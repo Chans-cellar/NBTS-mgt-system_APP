@@ -2,9 +2,20 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import {COLORS, FONTS} from "../Theme";
 import AlertNotification from "../Components/AlertNotification";
+import { doc, onSnapshot } from "firebase/firestore";
+import { db } from '../Components/config';
+import {useState} from "react";
 
 export default function AlertScreen() {
+
+    const [Adr, setValue] = usaeState('');
+
+    const unsub = onSnapshot(doc(db, "Blood_Center", "ptRPzeSdb1i33JKDNzGK"), (doc) => {
+        setValue(doc.data()['Address']+'');
+    });
+
     return (
+
         <View style={styles.container}>
             <View style={styles.headingDiv}>
                 <Text style={styles.headingDiv__Main}>
