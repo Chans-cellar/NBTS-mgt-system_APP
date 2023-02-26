@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     container: {
         display: "flex",
         flex: 1,
-        backgroundColor: COLORS.LavenderBlush,
+        backgroundColor: COLORS.LadyAnne,
         justifyContent: "center",
         alignItems: "center"
     }
