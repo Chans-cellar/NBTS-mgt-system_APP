@@ -2,6 +2,7 @@ import {StatusBar} from 'expo-status-bar';
 import {StyleSheet, Text, View} from 'react-native';
 import {COLORS, FONTS} from "../Theme";
 
+
 export default function Notification() {
     return (
         <View style={styles.container}>
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
         width: 350,
         alignItems: "center",
         margin:5,
-        shadowColor: COLORS.WineRed,
+        shadowColor: COLORS.UsedOil,
         shadowOffset: {
             width: 0,
             height: 4,
@@ -74,7 +75,7 @@ const styles = StyleSheet.create({
     dateContainer: {
         width: 50,
         height: 50,
-        backgroundColor: COLORS.CandyRed,
+        backgroundColor: COLORS.RomanEmpireRed,
         borderRadius: 6,
         alignItems: "center",
         justifyContent: "center",
@@ -88,14 +89,14 @@ const styles = StyleSheet.create({
     locateContainer__eventTXT: {
         fontFamily: FONTS.Black,
         fontSize: 18,
-        color: COLORS.WineRed,
+        color: COLORS.UsedOil,
         margin:1
     },
 
     locateContainer__locationTXT: {
         fontFamily: FONTS.Regular,
         fontSize:14,
-        color:COLORS.AshPink,
+        color:COLORS.Awakening,
         margin:1
 
     }

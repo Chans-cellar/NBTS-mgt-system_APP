@@ -1,14 +1,15 @@
 
 
 export const COLORS = {
-    WineRed: '#221515',
-    JamRed: '#5F0E0E',
-    CherryRed: '#AD1717',
-    CandyRed: '#ED0F0F',
-    Pink: '#FF9090',
-    AshPink: '#B99F9F',
-    CrepePink: '#E6BFBF',
-    LavenderBlush: '#FDE3DF'
+    UsedOil: '#221515',
+    VampiricCouncil: '#5F0E0E',
+    KetchupLater: '#AD1717',
+    RomanEmpireRed: '#ED0F0F',
+    MineralRed: '#B25454',
+    CherishedOne: '#FF9090',
+    Awakening: '#B99F9F',
+    SweetBlush: '#E6BFBF',
+    LadyAnne: '#FDE3DF'
 }
 
 export const FONTS = {

@@ -3,6 +3,8 @@ import {StyleSheet, Text, View} from 'react-native';
 import {COLORS, FONTS} from "../Theme";
 import Notification from "../Components/Notification";
 
+
+
 export default function EventScreen() {
     return (
         <View style={styles.container}>
@@ -16,10 +18,11 @@ export default function EventScreen() {
                     {
                         fontFamily: FONTS.Black,
                         fontSize: 30,
-                        color:COLORS.WineRed,
+                        color:COLORS.UsedOil,
                         margin:1
                     }
                 }>
+
                     Upcoming Campaigns
                 </Text>
 
@@ -28,7 +31,7 @@ export default function EventScreen() {
                     {
                         fontFamily: FONTS.Bold,
                         fontSize: 18,
-                        color:COLORS.AshPink,
+                        color:COLORS.Awakening,
                         margin:1
                     }
                 }>
@@ -52,7 +55,7 @@ const styles = StyleSheet.create({
     container: {
         display: "flex",
         flex: 1,
-        backgroundColor: COLORS.LavenderBlush,
+        backgroundColor: COLORS.LadyAnne,
 
     },
 

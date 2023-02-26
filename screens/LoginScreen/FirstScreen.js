@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     container: {
         display: "flex",
         flex: 1,
-        backgroundColor: COLORS.LavenderBlush,
+        backgroundColor: COLORS.LadyAnne,
     },
 
     HeadingDiv: {
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     },
 
     HeadingDiv__MainTXT: {
-        color: COLORS.WineRed,
+        color: COLORS.UsedOil,
         fontFamily: FONTS.Bold,
         fontSize: 30,
         alignSelf: 'flex-start',
@@ -178,14 +178,14 @@ const styles = StyleSheet.create({
     },
 
     HeadingDiv__SubTXT:{
-        color: COLORS.AshPink,
+        color: COLORS.Awakening,
         fontFamily: FONTS.Regular,
         fontSize: 16,
 
     },
 
     textInput__labelTXT: {
-        color: COLORS.WineRed,
+        color: COLORS.UsedOil,
         fontFamily: FONTS.Bold,
         fontSize: 16,
         alignSelf: 'flex-start',
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
     },
 
     textInput__dataHolder: {
-        backgroundColor: COLORS.CrepePink,
+        backgroundColor: COLORS.SweetBlush,
         width: 320,
         height: 50,
         borderRadius: 10,
@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
     },
 
     btn: {
-        backgroundColor: COLORS.CandyRed,
+        backgroundColor: COLORS.RomanEmpireRed,
         borderRadius: 20,
         width: 140,
         height: 46,

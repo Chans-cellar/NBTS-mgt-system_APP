@@ -19,7 +19,7 @@ export default function AlertNotification() {
                     </Text>
                     <Text style={[
                         styles.alertNotification__detailsDiv__colDetailInstance__TEXT,
-                        {fontFamily: FONTS.Bold, color:COLORS.CandyRed}
+                        {fontFamily: FONTS.Bold, color:COLORS.RomanEmpireRed}
 
                     ]}>
                         07/02/2023
@@ -32,7 +32,7 @@ export default function AlertNotification() {
                     </Text>
                     <Text style={[
                         styles.alertNotification__detailsDiv__colDetailInstance__TEXT,
-                        {fontFamily: FONTS.Bold, color:COLORS.CandyRed}
+                        {fontFamily: FONTS.Bold, color:COLORS.RomanEmpireRed}
 
                     ]}>
                         9.30 A.M
@@ -45,7 +45,7 @@ export default function AlertNotification() {
                     </Text>
                     <Text style={[
                         styles.alertNotification__detailsDiv__colDetailInstance__TEXT,
-                        {fontFamily: FONTS.Bold, color:COLORS.CandyRed}
+                        {fontFamily: FONTS.Bold, color:COLORS.RomanEmpireRed}
                     ]}>
                         Narahenpita Blood Bank
                     </Text>
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     alertNotification__detailsDiv__colDetailInstance__TEXT: {
         fontFamily:FONTS.Regular,
         fontSize:12,
-        color: COLORS.Pink
+        color: COLORS.CherishedOne
 
 
     }

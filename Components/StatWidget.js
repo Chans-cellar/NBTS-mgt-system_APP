@@ -47,14 +47,6 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         width: 144,
         height: 159,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 7,
-        },
-        shadowOpacity: 0.43,
-        shadowRadius: 9.51,
-
         elevation: 15,
         flexDirection: "column",
         justifyContent: "space-around"
@@ -79,24 +71,35 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        color: COLORS.AshPink,
+        color: COLORS.Awakening,
         fontFamily: FONTS.Black,
         fontSize: 10,
         textTransform: "uppercase"
     },
 
     NumValue: {
-        color: COLORS.CandyRed,
+        color: COLORS.RomanEmpireRed,
         fontFamily: FONTS.Black,
         fontSize: 55,
 
     },
 
     units: {
-        color: COLORS.AshPink,
+        color: COLORS.Awakening,
         fontFamily: FONTS.Black,
         fontSize: 11,
         textTransform: "uppercase"
 
+    },
+    shadow: {
+        shadowColor: COLORS.UsedOil,
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity:  0.19,
+        shadowRadius: 5.62,
+        elevation: 6,
+        marginVertical:5
     }
 });

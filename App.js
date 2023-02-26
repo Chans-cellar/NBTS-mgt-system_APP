@@ -12,17 +12,18 @@ import {
 } from '@expo-google-fonts/lato';
 import FirstScreen from "./screens/LoginScreen/FirstScreen";
 import LocationScreen from "./screens/LoginScreen/LocationScreen";
-import AlertScreen from "./screens/AlertScreen";
 import AppointmentScreen from "./screens/AppointmentScreen";
 import HealthScreen from "./screens/LoginScreen/HealthScreen";
 import PasswordScreen from "./screens/LoginScreen/PasswordScreen";
 import TabNavigationScreen from "./screens/TabNavigationScreen";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import EventScreen from "./screens/EventScreen";
 import { useState } from 'react';
 import { NICContext } from './screens/helper/Context';
 
+
+import EventScreen from "./screens/EventScreen";
+import AlertScreen from "./screens/AlertScreen";
 
 
 
@@ -54,6 +55,7 @@ export default function App() {
             <View style={styles.container}>
                 <NavigationContainer>
                     <Stack.Navigator initialRouteName={'PersonalLog'}>
+
                         <Stack.Screen options={{headerShown:false}} name="Home" component={Home} />
                         <Stack.Screen options={{headerShown:false}} name="Event" component={EventScreen} />
                         <Stack.Screen options={{headerShown:false}} name="Alert" component={AlertScreen} />
@@ -62,6 +64,8 @@ export default function App() {
                         <Stack.Screen options={{headerShown:false}} name="LocationLog" component={LocationScreen} />
                         <Stack.Screen options={{headerShown:false}} name="HealthLog" component={HealthScreen} />
                         <Stack.Screen options={{headerShown:false}} name="PasswordLog" component={PasswordScreen} />
+                        <Stack.Screen options={{headerShown:false}} name="TabNav" component={TabNavigationScreen} />
+
                     </Stack.Navigator>
                 </NavigationContainer>
             </View>

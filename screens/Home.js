@@ -6,7 +6,6 @@ import {COLORS, FONTS} from "../Theme";
 import {useNavigation} from "@react-navigation/native";
 
 
-
 export default function Home() {
     const navigation = useNavigation();
 
@@ -16,7 +15,7 @@ export default function Home() {
             {/*Greeting*/}
             <View style={styles.greetingDiv}>
                 <Text style={styles.greetingDiv__MainTXT}> Hello </Text>
-                <Text style={styles.greetingDiv__SubTXT}> Chandika </Text>
+                <Text style={styles.greetingDiv__SubTXT}> Kamal Weeramuni </Text>
             </View>
 
 
@@ -30,35 +29,38 @@ export default function Home() {
             </View>
 
 
-            {/*Statistic  Widget Heading*/}
-            <View style={styles.Home__statHead__cont}>
-                <Text style={
-                    {
-                        color: COLORS.WineRed,
-                        fontSize: 18,
-                        fontFamily: FONTS.Bold
+            {/*Statistic  Widget Division*/}
+            <View>
+                {/*Statistic  Widget Heading*/}
+                <View style={styles.Home__statHead__cont}>
+                    <Text style={
+                        {
+                            color: COLORS.UsedOil,
+                            fontSize: 24,
+                            fontFamily: FONTS.Bold
 
-                    }
-                }>Your Contributions</Text>
-                <Text style={
-                    {
-                        color: COLORS.AshPink,
-                        fontSize: 10,
-                        fontFamily: FONTS.Regular
+                        }
+                    }>Your Contributions</Text>
+                    <Text style={
+                        {
+                            color: COLORS.Awakening,
+                            fontSize: 14,
+                            fontFamily: FONTS.Regular
 
-                    }
-                }>To National Blood transfusion Service</Text>
+                        }
+                    }>To National Blood transfusion Service</Text>
+                </View>
+                {/*Statistic Widget*/}
+                <View style={styles.Home__StatWidgetDiv}>
+                    <StatWidget/>
+                    <StatWidget/>
+                </View>
+
             </View>
 
 
-            {/*Statistic Widget*/}
-            <View style={styles.Home__StatWidgetDiv}>
-                <StatWidget/>
-                <StatWidget/>
-            </View>
-
-            {/*appointment button*/}
-            <View style={{alignItems: "center", marginTop:30 }}>
+            {/*appointment button Division*/}
+            <View style={styles.Home__AppointBtn__DIV}>
                 <TouchableOpacity
                     style={styles.Home__AppointBtn}
                     onPress={() => navigation.navigate("Appointment")}
@@ -71,10 +73,6 @@ export default function Home() {
                 </TouchableOpacity>
             </View>
 
-            {/*Bottom Tab Bar*/}
-            <View style={styles.bottomTabDiv}>
-
-            </View>
 
         </View>
     );
@@ -84,7 +82,9 @@ const styles = StyleSheet.create({
     container: {
         display: "flex",
         flex: 1,
-        backgroundColor: COLORS.LavenderBlush,
+        backgroundColor: COLORS.LadyAnne,
+        paddingBottom:85,
+        justifyContent:"space-evenly"
     },
 
     greetingDiv: {
@@ -94,14 +94,14 @@ const styles = StyleSheet.create({
 
     greetingDiv__MainTXT: {
         fontFamily: FONTS.Regular,
-        color: COLORS.AshPink,
+        color: COLORS.Awakening,
         fontSize: 30,
         marginLeft: 20
     },
 
     greetingDiv__SubTXT: {
         fontFamily: FONTS.Black,
-        color: COLORS.WineRed,
+        color: COLORS.UsedOil,
         fontSize: 30,
         marginLeft: 20
     },
@@ -115,11 +115,20 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-evenly",
-        marginTop: 20
+        marginTop: 20,
+        width: 350,
+        alignSelf: "center"
+
+
+    },
+    Home__AppointBtn__DIV: {
+        alignItems: "center",
+        marginTop: 30
+
     },
 
     Home__AppointBtn: {
-        backgroundColor: COLORS.CandyRed,
+        backgroundColor: COLORS.RomanEmpireRed,
         borderRadius: 20,
         width: 310,
         height: 46,
@@ -132,17 +141,6 @@ const styles = StyleSheet.create({
         fontFamily: FONTS.Bold,
         fontSize: 18
     },
-
-    bottomTabDiv: {
-        position:"absolute",
-        bottom:0,
-        left:0,
-        right:0,
-        width:500,
-        height: 107,
-        backgroundColor: '#fff',
-
-    }
 
 
 });

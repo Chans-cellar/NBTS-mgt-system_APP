@@ -8,7 +8,7 @@ import {useState} from "react";
 
 export default function AlertScreen() {
 
-    const [Adr, setValue] = usaeState('');
+    const [Adr, setValue] = useState('');
 
     const unsub = onSnapshot(doc(db, "Blood_Center", "ptRPzeSdb1i33JKDNzGK"), (doc) => {
         setValue(doc.data()['Address']+'');
@@ -40,7 +40,7 @@ export default function AlertScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: COLORS.LavenderBlush,
+        backgroundColor: COLORS.LadyAnne,
         alignItems: 'center',
     },
 
@@ -57,13 +57,16 @@ const styles = StyleSheet.create({
 
     },
     headingDiv__Main:{
-        fontFamily:FONTS.Black,
-        color: COLORS.WineRed,
-        fontSize:24
+        fontFamily: FONTS.Black,
+        fontSize: 30,
+        color:COLORS.UsedOil,
+        margin:1
     },
     headingDiv__Sub:{
-        fontFamily:FONTS.Bold,
-        color: COLORS.AshPink
+        fontFamily: FONTS.Bold,
+        fontSize: 18,
+        color:COLORS.Awakening,
+        margin:1
 
     }
 });

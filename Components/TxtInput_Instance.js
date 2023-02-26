@@ -9,14 +9,14 @@ export default function TxtInput_Instance(props) {
         <View style={styles.container}>
 
             {/*label*/}
-            <Text style={{color:COLORS.WineRed, fontFamily:FONTS.Bold, fontSize:16, alignSelf: 'flex-start', paddingLeft:20}}>
+            <Text style={{color:COLORS.UsedOil, fontFamily:FONTS.Bold, fontSize:16, alignSelf: 'flex-start', paddingLeft:20}}>
                 {props.label}
             </Text>
 
             {/*textbox*/}
             <TextInput style={
                 {
-                    backgroundColor: COLORS.CrepePink,
+                    backgroundColor: COLORS.SweetBlush,
                     width: 320,
                     height: 50,
                     borderRadius: 10,

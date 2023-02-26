@@ -46,7 +46,7 @@ export default function AppointmentScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: COLORS.CandyRed,
+        backgroundColor: COLORS.RomanEmpireRed,
 
 
     },
@@ -69,12 +69,12 @@ const styles = StyleSheet.create({
     Location__subTXT: {
         fontSize: 18,
         fontFamily: FONTS.Black,
-        color: COLORS.Pink
+        color: COLORS.CherishedOne
     },
 
     FormCard: {
         marginTop: 75,
-        backgroundColor: COLORS.LavenderBlush,
+        backgroundColor: COLORS.LadyAnne,
         borderTopStartRadius: 30,
         borderTopEndRadius: 30,
         height:700
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
 
     FormCard__Heading__TXT: {
         fontFamily: FONTS.Black,
-        color: COLORS.WineRed,
+        color: COLORS.UsedOil,
         fontSize: 28,
     },
 
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     FormCard__Form__btn: {
-        backgroundColor: COLORS.CandyRed,
+        backgroundColor: COLORS.RomanEmpireRed,
         borderRadius: 20,
         width: 150,
         height: 46,
